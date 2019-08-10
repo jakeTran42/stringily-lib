@@ -1,0 +1,52 @@
+{
+  "name": "numberily",
+  "version": "1.0.0",
+  "description": "Number object methods",
+  "main": "umd/index.js",
+  "module": "esm/index.js",
+  "files": [
+    "esm/*",
+    "umd/*"
+  ],
+  "types": "esm/index.d.ts",
+  "scripts": {
+    "test": "npm run prepare && jest test.ts",
+    "prepare": "rollup --config",
+    "coverage": "npm test && codecov"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run test"
+    }
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "coverageDirectory": "./coverage/",
+    "collectCoverage": true
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaketran42/numberily.git"
+  },
+  "author": "Jake Tran",
+  "devDependencies": {
+    "@types/jest": "^24.0.16",
+    "@typescript-eslint/eslint-plugin": "^1.13.0",
+    "@typescript-eslint/parser": "^1.13.0",
+    "codecov": "^3.5.0",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-import": "^2.18.0",
+    "husky": "^3.0.1",
+    "jest": "^24.8.0",
+    "rollup": "^1.17.0",
+    "rollup-plugin-typescript2": "^0.22.1",
+    "ts-jest": "^24.0.2",
+    "typescript": "^3.5.3"
+  },
+  "dependencies": {
+    "rollup-plugin-terser": "^5.1.1"
+  }
+}
